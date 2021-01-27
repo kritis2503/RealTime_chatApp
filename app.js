@@ -62,7 +62,7 @@ io.on('connection',function(socket){
 
 
 // http.listen(3000)
-let port=3000;
+let port="https://kriti-realtime-chatapp.herokuapp.com/";
 http.listen(port,function(){
     console.log("Server started at port 3000");
 })
