@@ -1,6 +1,8 @@
 let sendButton=document.querySelector(".send-button");
 let chatMessage=document.querySelector("#chat-message");
 let chatList=document.querySelector(".chat-list");
+let onlineList=document.querySelector(".online-list");
+let file=document.querySelector("#file");
 
 let username=prompt("Enter your Name!");
 console.log(username);
@@ -22,4 +24,6 @@ sendButton.addEventListener("click",function(){
 
         socket.emit("chat",message);
     }
-})
+});
+
+file.addEventListener("")

@@ -12,7 +12,15 @@
 <body>
     <div class="content">
         <div class="chat-box">
-            <div class="left-view"></div>
+            <div class="left-view">
+                <div class="online">
+                    <div class="red"></div>
+                    <div class="on">Online</div>
+                </div>
+                <ul class="online-list">
+
+                </ul>
+            </div>
             <div class="right-view">
                 <div class="chat-list">
                     <!-- <div class="chat left">Hey guys !</div> -->
@@ -73,8 +81,8 @@
                     <input type="text" id="chat-message" placeholder="Type a message!">
                     <!-- <input type="file" id="img" name="img" accept="image/*"> -->
                     <div class="attachment">
-                        <i class="fas fa-paperclip"></i>
-                        <input type="file" id="att" style="display: none;">
+                        <!-- <i class="fas fa-paperclip" id="clipBtn"></i> -->
+                        <input type="file" alt="" id="file" >
                     </div>
                     <div class="picture">
                         <i class="fas fa-camera"></i>

@@ -115,6 +115,21 @@
     margin-left: 10px;
     color: #aca6c1;
 }
+#att{
+    width: 25px;
+    position: absolute;
+    top: 11px;
+    left: 465px;
+    z-index: -1;
+    background-image: url("https://www.svgrepo.com/show/2066/paper-clip.svg"); 
+}
+#clipBtn{
+    width: 22px;
+    position: absolute;
+    top: 11px;
+    left: 472px;
+    z-index: 2;
+}
 .emoji{
     position: absolute;
     left: 34px;
@@ -299,4 +314,32 @@
 .attachment{
     color: #aca6c1;
     margin-right: 9px;   
+}
+.online{
+    display: flex;
+    border-bottom-style: outset;
+    height: 47px;
+}
+.red{
+        height: 23px;
+    background: red;
+    width: 23px;
+    margin-left: 20px;
+    border-radius: 10px;
+    margin-top: 13px;
+    margin-right: 14px;
+}
+.on{
+    color: white;
+    margin-top: 11px;
+    margin-left: 9px;
+    font-size: 20px;
+}
+.online-list{
+    color: beige;
+}
+.online-list li{
+    list-style-type: none;
+    margin: 10px;
+    font-size: 20px;
 }

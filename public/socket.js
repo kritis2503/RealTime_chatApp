@@ -12,6 +12,11 @@ socket.on("chat-join",function(username){
     chat.classList.add("join");
     chat.innerHTML=username+" joined the chat!";
     chatList.append(chat);
+
+    let li_=document.createElement("li");
+    li_.setAttribute("id",username);
+    li_.innerHTML=username;
+    onlineList.append(li_);
 });
 
 socket.on("leave",function(username){

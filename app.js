@@ -57,10 +57,6 @@ io.on('connection',function(socket){
 });
 
 
-
-
-
-
 // http.listen(3000)
 //let port="https://kriti-realtime-chatapp.herokuapp.com/";
 let port=3000;
