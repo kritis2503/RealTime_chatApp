@@ -80,12 +80,14 @@
                     </div>
                     <input type="text" id="chat-message" placeholder="Type a message!">
                     <!-- <input type="file" id="img" name="img" accept="image/*"> -->
-                    <div class="attachment">
-                        <!-- <i class="fas fa-paperclip" id="clipBtn"></i> -->
-                        <input type="file" alt="" id="file" >
-                    </div>
+                    <!-- <div class="attachment"> -->
+                        <!-- <button><i class="fas fa-paperclip" id="clipBtn"></i></button> -->
+                        <!-- <input type="file" src=".." alt="" id="clipBtn"  style="display: none;"> -->
+                    <!-- </div> -->
                     <div class="picture">
-                        <i class="fas fa-camera"></i>
+                        <!-- <i class="fas fa-camera" id="cam-icon"></i> -->
+                        <img src="./resouces/unnamed.png" id="cam-icon" alt="">
+                        <input type="file" src="" alt="" id="pic" style="display: none;">
                     </div>                
                     <div class="send-button" id="send-chat">
                         <i class="fas fa-paper-plane"></i>
@@ -96,7 +98,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js" integrity="sha512-2rUSTSAeOO02jF6eBqENNqPs1EohenJ5j+1dgDPdXSLz9nOlrr8DJk4zW/lDy8rjhGCSonW3Gx812XJQIKZKJQ==" crossorigin="anonymous"></script>
 <script>
-    const socket=io.connect("http://localhost:3000");
+    const socket=io.connect("https://kriti-realtime-chatapp.herokuapp.com/");
 </script>
 <script src="script.js"></script>
 <script src="emoji.js"></script>

@@ -2,7 +2,9 @@ let sendButton=document.querySelector(".send-button");
 let chatMessage=document.querySelector("#chat-message");
 let chatList=document.querySelector(".chat-list");
 let onlineList=document.querySelector(".online-list");
-let file=document.querySelector("#file");
+let camIcon=document.querySelector("#cam-icon");
+let pic=document.querySelector("#pic");
+
 
 let username=prompt("Enter your Name!");
 console.log(username);
@@ -26,4 +28,15 @@ sendButton.addEventListener("click",function(){
     }
 });
 
-file.addEventListener("")
+// file.addEventListener("change",function(e){
+    // console.log(e);
+// })
+
+camIcon.addEventListener("click",function(){
+   pic.click(); 
+   
+});
+pic.addEventListener("change",function(e){
+    let photo=e.target.files[0];
+    console.log(photo);
+})

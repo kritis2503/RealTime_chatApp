@@ -24,4 +24,7 @@ socket.on("leave",function(username){
     chat.classList.add("leave");
     chat.innerHTML=username+" left the chat!";
     chatList.append(chat);
+
+    let liDeleted=document.querySelector("#"+username);
+    
 })
