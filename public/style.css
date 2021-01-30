@@ -109,9 +109,9 @@
 }
 #cam-icon{
     height: 80%;
-    position: absolute;
-    left: 700px;
-    top: 8px;
+    /* position: absolute; */
+    /* left: 700px; */
+    /* top: 8px; */
 }
 .fas{
     font-size: 31px;
