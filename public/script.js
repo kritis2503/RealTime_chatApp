@@ -5,6 +5,14 @@ let onlineList=document.querySelector(".online-list");
 let camIcon=document.querySelector("#cam-icon");
 let pic=document.querySelector("#pic");
 
+chatMessage.addEventListener("keyup",function(e){
+    if(e.keyCode==13)
+        sendButton.click();
+});
+
+window.setInterval(function() {
+    chatList.scrollTop = chatList.scrollHeight;
+  }, 5000);
 
 let username=prompt("Enter your Name!");
 console.log(username);
@@ -27,6 +35,7 @@ sendButton.addEventListener("click",function(){
         socket.emit("chat",message);
     }
 });
+
 camIcon.addEventListener("click",function(){
    pic.click(); 
    
