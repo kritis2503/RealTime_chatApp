@@ -27,11 +27,6 @@ sendButton.addEventListener("click",function(){
         socket.emit("chat",message);
     }
 });
-
-// file.addEventListener("change",function(e){
-    // console.log(e);
-// })
-
 camIcon.addEventListener("click",function(){
    pic.click(); 
    
@@ -39,4 +34,20 @@ camIcon.addEventListener("click",function(){
 pic.addEventListener("change",function(e){
     let photo=e.target.files[0];
     console.log(photo);
+    let src=URL.createObjectURL(photo);
+
+    let chat=document.createElement("div");
+    let img=document.createElement("img");
+
+    img.setAttribute("src",src);
+    img.classList.add("chat-img");
+
+    chat.classList.add("chat");
+    chat.classList.add("right");
+    chat.append(img);
+
+    chatList.append(chat);
+    console.log(chat);
+
+    socket.emit("chat-img",src);
 })

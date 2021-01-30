@@ -108,10 +108,10 @@
     margin-right: 9px;
 }
 #cam-icon{
-    height: 32px;
+    height: 80%;
     position: absolute;
-    left: 390px;
-    top: -11px;
+    left: 394px;
+    top: 8px;
 }
 .fas{
     font-size: 31px;
@@ -349,4 +349,7 @@
     list-style-type: none;
     margin: 10px;
     font-size: 20px;
+}
+.chat-img{
+    height: 230px;
 }
