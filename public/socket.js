@@ -51,6 +51,4 @@ socket.on("chat-img",function(imgObj){
     chatList.append(userName);
     chatList.append(imgDiv);
 
-    
-
 })

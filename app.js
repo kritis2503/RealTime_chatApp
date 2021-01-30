@@ -41,32 +41,32 @@ io.on('connection',function(socket){
         }
         socket.broadcast.emit("chat-left",{message,username});
     })
-    socket.on("chat-img",function(src){
-        let username;
-        for(let i=0;i<user.length;i++){
-            if(user[i].id==socket.id){
-                username=user[i].username;
-                break;
-            }
-        }
-        var readStream=fs.createReadStream(path.resolve(src),{
-            encoding:'binary'
-        }), chunks=[];
+    // socket.on("chat-img",function(src){
+        // let username;
+        // for(let i=0;i<user.length;i++){
+            // if(user[i].id==socket.id){
+                // username=user[i].username;
+                // break;
+            // }
+        // }
+        // var readStream=fs.createReadStream(path.resolve(src),{
+            // encoding:'binary'
+        // }), chunks=[];
 
-        readStream.on('readable',function(){
-            console.log("image loading");
-        });
+        // readStream.on('readable',function(){
+            // console.log("image loading");
+        // });
 
-        readStream.on('data',function(chunk){
-            chunks.push(chunk);
-            socket.broadcast.emit("chat-img",{chunk,username});
-        });
+        // readStream.on('data',function(chunk){
+            // chunks.push(chunk);
+            // socket.broadcast.emit("chat-img",{chunk,username});
+        // });
 
-        readStream.on('end',function(){
-            console.log('image loaded');
-        });
-        
-    });
+        // readStream.on('end',function(){
+            // console.log('image loaded');
+        // });
+        // 
+    // });
 
     socket.on('disconnect',function(){
         let idx;
