@@ -14,8 +14,8 @@ socket.on("chat-join",function(username){
     chatList.append(chat);
 
     let li_=document.createElement("li");
-    li_.setAttribute("id",username);
-    li_.innerHTML=username;
+    li_.setAttribute("id",username.username);
+    li_.innerHTML=username.username;
     onlineList.append(li_);
 });
 

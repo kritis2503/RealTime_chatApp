@@ -12,7 +12,7 @@ chatMessage.addEventListener("keyup",function(e){
 
 window.setInterval(function() {
     chatList.scrollTop = chatList.scrollHeight;
-  }, 5000);
+  }, 500);
 
 let username=prompt("Enter your Name!");
 console.log(username);
