@@ -15,31 +15,27 @@ socket.on("chat-join",function(u){
 
     for(let i=0;i<u.user.length;i++){
         let un=document.getElementById(u.user[i]);
-        if(un==undefined && u.username==u.user[i]){}
-        else{
+        if(un===undefined && u.username!=u.user[i]){
+        
         let li_=document.createElement("li");
-        li_.setAttribute("id",u.username);
-        li_.innerHTML=u.username;
+        li_.setAttribute("id",u.user[i]);
+        li_.innerHTML=u.user[i];
         onlineList.append(li_);
-        }
     }
-    
-    
-    
-    
+    }
 });
 
 socket.on("leave",function(username){
     let chat=document.createElement("div");
     chat.classList.add("leave");
-    chat.innerHTML=username.username+" left the chat!";
+    chat.innerHTML=username.name+" left the chat!";
     chatList.append(chat);
 
     //let liDeleted=document.querySelector("#"+username);
     for(let i=0;i<username.user.length;i++){
         let u=document.getElementById(username.user[i]);
         console.log(u);
-        if(u==undefined){
+        if(u===undefined){
             console.log("In leave If");
             u.remove();
         }

@@ -41,22 +41,37 @@ camIcon.addEventListener("click",function(){
    
 });
 pic.addEventListener("change",function(e){
-    let photo=e.target.files[0];
-    console.log(photo);
-    let src=URL.createObjectURL(photo);
+    // let photo=e.target.files[0];
+    var data = e.target.files[0];
+    readThenSendFile(data);  
+    // console.log(photo);
+    // let src=URL.createObjectURL(photo);
 
-    let chat=document.createElement("div");
-    let img=document.createElement("img");
+    // let chat=document.createElement("div");
+    // let img=document.createElement("img");
 
-    img.setAttribute("src",src);
-    img.classList.add("chat-img");
+    // img.setAttribute("src",src);
+    // img.classList.add("chat-img");
 
-    chat.classList.add("chat");
-    chat.classList.add("right");
-    chat.append(img);
+    // chat.classList.add("chat");
+    // chat.classList.add("right");
+    // chat.append(img);
 
-    chatList.append(chat);
-    console.log(chat);
+    // chatList.append(chat);
+    // console.log(chat);
 
-    socket.emit("chat-img",src);
+    // socket.emit("chat-img",src);
+
 })
+function readThenSendFile(data){
+
+    var reader = new FileReader();
+    reader.onload = function(evt){
+        var msg ={};
+        msg.username = username;
+        msg.file = evt.target.result;
+        msg.fileName = data.name;
+        socket.emit('base64 file', msg);
+    };
+    reader.readAsDataURL(data);
+}
