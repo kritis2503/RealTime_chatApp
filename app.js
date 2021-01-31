@@ -39,6 +39,7 @@ io.on('connection',function(socket){
                 break;
             }
         }
+        console.log(user);
         socket.broadcast.emit("chat-left",{message,username});
     })
     // socket.on("chat-img",function(src){
@@ -79,6 +80,7 @@ io.on('connection',function(socket){
             }
         }
         user.splice(idx,1);
+        console.log(user);
         socket.broadcast.emit("leave",{name,user});
     });
 });

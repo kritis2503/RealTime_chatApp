@@ -32,13 +32,15 @@ socket.on("chat-join",function(u){
 socket.on("leave",function(username){
     let chat=document.createElement("div");
     chat.classList.add("leave");
-    chat.innerHTML=username+" left the chat!";
+    chat.innerHTML=username.username+" left the chat!";
     chatList.append(chat);
 
     //let liDeleted=document.querySelector("#"+username);
     for(let i=0;i<username.user.length;i++){
         let u=document.getElementById(username.user[i]);
+        console.log(u);
         if(u==undefined){
+            console.log("In leave If");
             u.remove();
         }
     }
