@@ -78,8 +78,8 @@ io.on('connection',function(socket){
                 break;
             }
         }
-        socket.broadcast.emit("leave",name);
         user.splice(idx,1);
+        socket.broadcast.emit("leave",{name,user});
     });
 });
 

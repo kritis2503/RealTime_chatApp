@@ -7,16 +7,26 @@ socket.on("chat-left",function(messageObj){
     chatList.append(chat);
 });
 
-socket.on("chat-join",function(username){
+socket.on("chat-join",function(u){
     let chat=document.createElement("div");
     chat.classList.add("join");
-    chat.innerHTML=username+" joined the chat!";
+    chat.innerHTML=u.username+" joined the chat!";
     chatList.append(chat);
 
-    let li_=document.createElement("li");
-    li_.setAttribute("id",username.username);
-    li_.innerHTML=username.username;
-    onlineList.append(li_);
+    for(let i=0;i<u.user.length;i++){
+        let un=document.getElementById(u.user[i]);
+        if(un==undefined && u.username==u.user[i]){}
+        else{
+        let li_=document.createElement("li");
+        li_.setAttribute("id",u.username);
+        li_.innerHTML=u.username;
+        onlineList.append(li_);
+        }
+    }
+    
+    
+    
+    
 });
 
 socket.on("leave",function(username){
@@ -25,7 +35,13 @@ socket.on("leave",function(username){
     chat.innerHTML=username+" left the chat!";
     chatList.append(chat);
 
-    let liDeleted=document.querySelector("#"+username);
+    //let liDeleted=document.querySelector("#"+username);
+    for(let i=0;i<username.user.length;i++){
+        let u=document.getElementById(username.user[i]);
+        if(u==undefined){
+            u.remove();
+        }
+    }
     
 })
 // var imgChunks=[];
