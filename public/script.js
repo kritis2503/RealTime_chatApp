@@ -4,6 +4,7 @@ let chatList=document.querySelector(".chat-list");
 let onlineList=document.querySelector(".online-list");
 let camIcon=document.querySelector("#cam-icon");
 let pic=document.querySelector("#pic");
+//let $= require("jquery");
 
 chatMessage.addEventListener("keyup",function(e){
     if(e.keyCode==13)
@@ -36,14 +37,14 @@ sendButton.addEventListener("click",function(){
     }
 });
 
-camIcon.addEventListener("click",function(){
-   pic.click(); 
-   
-});
-pic.addEventListener("change",function(e){
+// camIcon.addEventListener("click",function(){
+//    pic.click(); 
+//    
+// });
+// pic.addEventListener("change",function(e){
     // let photo=e.target.files[0];
-    var data = e.target.files[0];
-    readThenSendFile(data);  
+    // var data = e.target.files[0];
+    // readThenSendFile(data);  
     // console.log(photo);
     // let src=URL.createObjectURL(photo);
 
@@ -62,16 +63,37 @@ pic.addEventListener("change",function(e){
 
     // socket.emit("chat-img",src);
 
-})
-function readThenSendFile(data){
+// })
+// function readThenSendFile(data){
+// 
+    // var reader = new FileReader();
+    // reader.onload = function(evt){
+        // var msg ={};
+        // msg.username = username;
+        // msg.file = evt.target.result;
+        // msg.fileName = data.name;
+        // socket.emit('base64 file', msg);
+    // };
+    // reader.readAsDataURL(data);
+// }
 
-    var reader = new FileReader();
-    reader.onload = function(evt){
-        var msg ={};
-        msg.username = username;
-        msg.file = evt.target.result;
-        msg.fileName = data.name;
-        socket.emit('base64 file', msg);
-    };
-    reader.readAsDataURL(data);
-}
+let images=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.png","7.jpg","8.jpg"];
+
+// let content=document.querySelector(".content");
+$(function () {
+    var i = 0;
+    $(".content").css("background-image", "url(./resources/" + images[i] + ")");
+    setInterval(function () {
+        i++;
+        if (i == images.length) {
+            i = 0;
+        }
+        //./resouces/astronomy-1867616__340.jpg
+        
+        $(".content").fadeOut("slow", function () {
+            $(this).css("background-image", "url(./resources/" + images[i] + ")");
+            $(this).fadeIn("slow");
+        });
+    }, 30000);
+});
+
